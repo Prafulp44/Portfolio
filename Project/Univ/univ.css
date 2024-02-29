@@ -1,0 +1,227 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+#topBar {
+    width: 100%;
+    background-color: #1bb3b8;
+    height: 50px;
+}
+
+.topContent {
+    height: 100%;
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#leftTopPart {
+    display: flex;
+    justify-content: space-between;
+}
+
+#rightTopPart {
+    display: flex;
+    justify-content: right;
+}
+
+#topYell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    background-color: #f4b222;
+    color: white;
+}
+
+#topIcons {
+    display: flex;
+    width: 200px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.topIcon {
+    width: 15px;
+    height: 15px;
+}
+
+#loginSignUp {
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+}
+
+.loginSign {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.loginSign img {
+    margin-right: 5px;
+}
+
+#topSubBar {
+    height: 120px;
+}
+
+#leftTopSubBar {
+    display: flex;
+    align-items: center;
+}
+
+#rightTopSubBar {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#UnivLogo {
+    width: 150px;
+}
+
+#rightTopSubBar a {
+    text-decoration-line: none;
+    color: black; 
+}
+
+#rightTopSubBar a:hover {
+    border-bottom: 2px solid #1bb3b8;
+}
+
+#backgroundImg {
+    width: 100%;
+    height: 700px;
+    position: relative;
+}
+
+#backgroundImg img {
+    width: 100%;
+    height: 700px;
+    object-fit:cover;
+    object-position: -150px;
+}
+
+#overLap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+#overLapContent {
+    width: 80vw;
+    margin: 0 auto;
+    color: white;
+}
+
+#overLapContent h1 {
+    font-size: 80px;
+    font-weight: lighter;
+    margin-bottom: 0;
+}
+
+#overLapContent p {
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+#overLapContent button {
+    font-size: 20px;
+    font-weight: 200;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+#overLapContent button:hover {
+    background-color: #1bb3b8;
+    border: 1px solid transparent;
+}
+
+.card {
+    width: 32%;
+    height: 320px;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 70px 0;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+.outerCircle {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 1px solid #1bb3b8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    transition-duration: 40ms;
+    transition-timing-function: ease-in-out;
+}
+
+.inCircleIcon {
+    width: 30px;
+    height: 30px;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+}
+
+.card h5 {
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    transition-duration: 5ms;
+    transition-timing-function: ease-in-out;
+}
+
+.card p {
+    color: rgb(101, 101, 101);
+    transition-duration: 10ms;
+    transition-timing-function: ease-in-out;
+}
+
+.card:hover {
+    background-color: #1bb3b8;
+    color: white;
+}
+
+.card:hover .outerCircle {
+    background-color: white;
+}
+
+.card:hover p {
+    color: white;
+}
+
+footer {
+    background-color: rgb(49, 49, 49);
+    width: 100%;
+    height: 150px;
+    display: flex;
+    color: white;
+    padding: 15px;
+}

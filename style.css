@@ -1,0 +1,699 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bgColor);
+    position: relative;
+    width: 100%;
+}
+
+:root {
+    --fontfam: 'Poppins', sans-serif;
+    --bgColor: rgb(255, 255, 245);
+    --lightorange: #ff8674;
+    --lightyellow: #f9df73;
+    --intermyellow: #ffdb4a;
+    --darkorange: #F55139;
+    --navColor: orange;
+    --contactBGcolor: #ffe3de;
+    --skillsHover: #ffe3de;
+    --footerColor: #F55139;
+    --inputColor: #111;
+}
+
+.darkMode {
+    --bgColor: #171c1d;
+    --lightorange: #041421;
+    --lightyellow: rgb(0, 202, 132);
+    --intermyellow: #ffdb4a;
+    --darkorange: #F55139;
+    --navColor: #0c0c0c;
+    --contactBGcolor: #242526;
+    --footerColor: black;
+    --skillsHover: #0c0c0c;
+    --white: white;
+    --inputColor: #f5f5f5;
+}
+
+#darkContainer {
+    margin-right: 35px;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label {
+    background-color: #111;
+    width: 45px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+    margin-right: 0;
+    position: absolute;
+    right: 10.5px;
+}
+
+.checkbox-label .ball {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    left: 33px;
+    top: 0px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.checkbox-label .ball {
+    transform: translateX(-33px);
+}
+
+
+.gradient-background {
+    background: linear-gradient(300deg, var(--lightorange), var(--lightyellow) 50%, var(--lightorange));
+    background-size: 180% 180%;
+    height: 100vh;
+    min-height: 450px;
+    width: auto;
+    animation: gradient-animation 12s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.mainh {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    position: fixed;
+    height: 90px;
+    width: 100%;
+    transition: all 200ms ease-in-out;
+}
+
+.mainh.scrolled {
+    background: var(--navColor);
+    position: fixed;
+    height: 90px;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar {
+    font-size: 21px;
+    color: white;
+    font-family: var(--fontfam);
+    font-weight: 600;
+    padding: 0 30px;
+    flex-grow: 1;
+    text-align: end;
+}
+
+.navbar>span {
+    padding: 20px 20px;
+}
+
+.navbar>span>a {
+    color: white;
+    text-decoration-line: none;
+    transition: all ease 300ms;
+}
+
+.navbar>span>a:hover {
+    display: inline-block;
+    color: var(--darkorange);
+    text-decoration-line: none;
+    transform: scale(1.1);
+}
+
+#logoContainer {
+    margin-bottom: 0;
+}
+
+.logo {
+    width: 150px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 30px;
+}
+
+#hamburgerMenuIconContainer {
+    display: none;
+    position: relative;
+    right: 22px;
+}
+
+#hamburgerMenuCloseIconContainer {
+    margin: 20px 0;
+    text-align: right;
+    position: relative;
+    right: 22px;
+}
+
+#hamburgerMenuIcon {
+    width: 30px;
+}
+
+#hamburgerShade {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 12;
+}
+
+#hamburger {
+    display: none;
+    width: 260px;
+    height: 100vh;
+    background-color: var(--lightorange);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+    box-sizing: border-box;
+    z-index: 15;
+}
+
+.hamburgerItems {
+    padding: 20px;
+    border-bottom: 1px solid white;
+}
+
+.hamburgerItems a {
+    font-size: 21px;
+    color: white;
+    font-family: var(--fontfam);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.take-top {
+    visibility: hidden;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background: var(--darkorange);
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    padding-top: 7px;
+    font-weight: 700;
+    font-size: 40px;
+    box-shadow: 0px 0px 8px black;
+    transition: 300ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.take-top>a {
+    color: white;
+    text-decoration-line: none;
+}
+
+.take-top.scrolledd {
+    visibility: visible;
+    background: var(--darkorange);
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    padding-top: 7px;
+    font-weight: 700;
+    font-size: 40px;
+    box-shadow: 0px 0px 8px black;
+    transition: 300ms;
+}
+
+.take-top:hover {
+    background-color: #e72001;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    padding-top: 7px;
+    font-weight: 700;
+    font-size: 40px;
+    box-shadow: 0px 0px 8px black;
+}
+
+.intro-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-container>h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 40px;
+    font-family: var(--fontfam);
+    color: var(--white);
+}
+
+.intro-container>h1 {
+    margin-top: 0px;
+    text-align: center;
+    font-size: 8vw;
+    font-family: var(--fontfam);
+    color: var(--white);
+
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .05em;
+    /* Adjust as needed */
+    animation: typing 3.5s steps(40, end);
+}
+
+.intro-container>h3 {
+    margin-top: 0px;
+    text-align: center;
+    font-size: 3vw;
+    color: var(--darkorange);
+    font-family: var(--fontfam);
+
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .05em;
+    /* Adjust as needed */
+    opacity: 0;
+    animation: typing2 3.5s steps(40, end);
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes typing2 {
+    0% {
+        opacity: 1;
+        width: 0;
+    }
+
+    100% {
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+.limit {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+section {
+    margin: 0px;
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.about-section {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 70px;
+    margin-bottom: 120px;
+    flex-wrap: wrap;
+}
+
+.horizontal-line {
+    margin: 0px auto;
+    text-align: center;
+    width: 50%;
+    height: 2px;
+    background-color: rgb(255, 255, 245);
+    clear: both;
+    color: var(--darkorange);
+}
+
+.horizontal-line>hr {
+    margin: 0px;
+}
+
+.profile-pic {
+    width: 250px;
+    border: 1px solid var(--darkorange);
+    box-shadow: 10px 10px 8px var(--darkorange);
+}
+
+.subheadings {
+    width: 100%;
+    background-color: var(--bgColor);
+    margin-top: 0px;
+    padding-top: 50px;
+}
+
+.subheadings>h1 {
+    text-align: center;
+    font-size: 3.5vw;
+    font-family: var(--fontfam);
+    margin-top: 45px;
+    margin-bottom: 0px;
+    color: var(--white);
+}
+
+.about-left {
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.about-right {
+    width: 750px;
+    flex-wrap: wrap;
+}
+
+.about-right>p {
+    font-family: var(--fontfam);
+    font-size: 1.35rem;
+    text-align: justify;
+    color: var(--white);
+}
+
+.project-section {
+    background-color: var(--bgColor);
+    margin-top: 5vh;
+    margin-bottom: 14vh;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.projectCard {
+    width: 320px;
+    height: 200px;
+    position: relative;
+    margin: 30px auto;
+}
+
+.projectImg {
+    width: 320px;
+    height: 200px;
+}
+
+.shadeOverProjectImg {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(transparent, transparent, black);
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: end;
+    color: white;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    font-size: 18px;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+.shadeOverProjectImg:hover {
+    background: linear-gradient(transparent, black);
+    display: flex;
+    color: white;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.shadeOverProjectImg .titleInShade {
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+
+.shadeOverProjectImg:hover #titleInShadeForUniv {
+    transform: matrix(1.5, 0, 0, 1.5, 80, -78);
+}
+
+.shadeOverProjectImg:hover #titleInShadeForEB {
+    transform: matrix(1.5, 0, 0, 1.5, 72, -78);
+}
+
+.shadeOverProjectImg:hover #titleInShadeForTinDog {
+    transform: matrix(1.5, 0, 0, 1.5, 110, -78);
+}
+
+#skills-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.skillsIcon {
+    width: 59px;
+}
+
+.skillsCard {
+    border: 1px solid gray;
+    padding-top: 55px;
+    padding-bottom: 42px;
+    display: flex;
+    width: 250px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    margin: 30px;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+.skillsCard:hover {
+    background-color: var(--skillsHover);
+    border: 1px solid var(--skillsHover);
+}
+
+.skillsCard p {
+    margin-bottom: 0;
+    font-size: 20px;
+    color: var(--white);
+}
+
+#contact-section {
+    padding-top: 40px;
+    padding-bottom: 100px;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    background-color: transparent;
+    margin-bottom: 0px;
+    font-family: var(--fontfam);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.subh-color {
+    background-color: var(--contactBGcolor);
+}
+
+#contact-left {
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contactForm {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+}
+
+#contact-right {
+    margin-top: 25px;
+    width: 250px;
+}
+
+#verticalContactLine {
+    border: 1PX SOLID #e72001;
+    margin: 0 2vw;
+}
+
+#nameContactForm {
+    display: flex;
+    justify-content: space-between;
+}
+
+#firstname {
+    flex-grow: 0.5;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 18px;
+    margin-right: 1vw;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#lastname {
+    flex-grow: 0.5;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 18px;
+    margin-left: 1vw;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#email {
+    flex-grow: 1;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#textarea {
+    flex-grow: 1;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#errorMessage {
+    color: red;
+    margin-left: 3px;
+}
+
+#submit-button {
+    flex-grow: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: var(--darkorange);
+    color: white;
+    border: none;
+    transition-duration: 300ms;
+    border: 1.5px solid var(--darkorange);
+}
+
+#submit-button:hover {
+    flex-grow: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    color: var(--darkorange);
+    border: 1.5px solid var(--darkorange);
+}
+
+.contactIcon {
+    width: 27px;
+    height: 27px;
+    margin-right: 21px;
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 20%;
+}
+
+.contactDetails {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.contactDetails p {
+    font-size: 20px;
+    margin: 0;
+    color: var(--white);
+}
+
+.contactDetails a {
+    text-decoration-line: none;
+    color: var(--white);
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: var(--footerColor);
+}
+
+footer p {
+    color: white;
+    padding-top: 20px;
+}
